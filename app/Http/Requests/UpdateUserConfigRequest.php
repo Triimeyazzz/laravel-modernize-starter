@@ -21,6 +21,7 @@ class UpdateUserConfigRequest extends FormRequest
             'is_horizontal' => ['sometimes', 'boolean'],
             'is_boxed' => ['sometimes', 'boolean'],
             'is_card_bordered' => ['sometimes', 'boolean'],
+            'mini_sidebar' => ['sometimes', 'boolean'],
         ];
     }
 }

@@ -33,14 +33,13 @@ const DarkthemeColors = ref([
     { name: "DARK_ORANGE_THEME", bg: "themeDarkOrange" },
 ]);
 
-const changeTheme = (theme: string) =>
-    router.put(route("config.update"), { theme });
-const changeDirection = (direction: boolean) =>
-    router.put(route("config.update"), { is_horizontal: direction });
-const changeContainer = (is_boxed: boolean) =>
-    router.put(route("config.update"), { is_boxed });
-const changeCardBorder = (is_bordered: boolean) =>
-    router.put(route("config.update"), { is_card_bordered: is_bordered });
+const updateConfig = (data: any) => router.put(route("config.update"), data)
+
+const changeTheme = (theme: string) => updateConfig({ theme })
+const changeDirection = (direction: boolean) => updateConfig({ is_horizontal: direction })
+const changeContainer = (is_boxed: boolean) => updateConfig({ is_boxed })
+const changeCardBorder = (is_bordered: boolean) => updateConfig({ is_card_bordered: is_bordered })
+const changeMiniSidebar = (mini_sidebar: boolean) => updateConfig({ mini_sidebar })
 </script>
 
 <!------------------------------------->
@@ -108,7 +107,7 @@ const changeCardBorder = (is_bordered: boolean) =>
             <v-sheet v-if="$page.props.auth.user.config.is_horizontal != true">
                 <h6 class="text-h6 mt-11 mb-2">Sidebar Type</h6>
                 <v-btn-toggle v-model="$page.props.auth.user.config.mini_sidebar" color="primary"
-                    class="my-2 btn-group-custom gap-3" rounded="0" group>
+                    class="my-2 btn-group-custom gap-3" rounded="0" group @update:model-value="changeMiniSidebar">
                     <v-btn :value="false" variant="text" elevation="9" class="rounded-md">
                         <LayoutSidebarIcon stroke-width="1.5" size="21" class="mr-2" />
                         Full

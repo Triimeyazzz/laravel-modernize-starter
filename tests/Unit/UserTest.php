@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
 
 uses(\Tests\TestCase::class);
 
-test('users have config', function() {
+test('users have config', function () {
     $user = User::factory()->create();
 
     expect($user->config())->toBeInstanceOf(HasOne::class);

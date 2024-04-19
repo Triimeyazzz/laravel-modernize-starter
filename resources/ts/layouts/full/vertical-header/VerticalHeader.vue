@@ -8,14 +8,19 @@ import Searchbar from './Searchbar.vue';
 import RightMobileSidebar from './RightMobileSidebar.vue';
 import Navigations from './Navigations.vue';
 import { isSidebarOpen } from '@/composables/useMobileSidebar';
+import { router } from '@inertiajs/vue3';
 const appsdrawer = ref(false);
 const priority = ref(0);
+
+const changeMiniSidebar = (mini_sidebar: boolean) => {
+    router.put(route("config.update"), { mini_sidebar });
+}
 </script>
 
 <template>
     <v-app-bar elevation="0" :priority="priority" height="70" class="">
         <v-btn class="hidden-md-and-down" icon color="primary" variant="text"
-            @click.stop="$page.props.auth.user.config.mini_sidebar = !$page.props.auth.user.config.mini_sidebar">
+            @click.stop="changeMiniSidebar(!$page.props.auth.user.config.mini_sidebar)">
             <Menu2Icon size="20" stroke-width="1.5" />
         </v-btn>
         <v-btn class="hidden-lg-and-up" icon variant="flat" @click.stop="isSidebarOpen = ! isSidebarOpen" size="small">
