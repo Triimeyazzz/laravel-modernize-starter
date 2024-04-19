@@ -1,6 +1,6 @@
 # Laravel Modernize Starter
 
-Welcome to the Laravel Modernize Starter project! This starter template aims to provide a modern foundation for your Laravel application development, utilizing Laravel, Inertia.js, and Vue.js to create powerful, interactive, and efficient web applications.
+Welcome to the Laravel Modernize Starter project! This starter template aims to provide a modern foundation for your Laravel application development, utilizing Laravel, Inertia.js, Vue.js, and Vuetify to create powerful, interactive, and efficient web applications.
 
 ## Features
 
@@ -8,8 +8,8 @@ Welcome to the Laravel Modernize Starter project! This starter template aims to 
 - **Inertia.js**: Harness the benefits of Inertia.js, a modern JavaScript library that allows you to build single-page apps using server-side routing and controllers.
 - **Vue.js**: Leverage Vue.js, a progressive JavaScript framework, to create dynamic and reactive user interfaces in your application.
 - **Vuetify**: Enjoy the rich and versatile UI components provided by Vuetify, a Material Design component framework for Vue.js, to create stunning interfaces with ease.
-- **Authentication**: Get started quickly with pre-configured authentication scaffolding provided by Laravel, including login, registration, password reset, and email verification.
-- **Database**: Utilize Laravel's built-in ORM, Eloquent, to interact with your database seamlessly, supporting multiple database systems such as MySQL, PostgreSQL, SQLite, and SQL Server.
+- **Authentication**: Laravel Breeze provides simple authentication scaffolding with built-in support for authentication features such as login, registration, password reset, and email verification.
+- **Server-Side Rendering (SSR)**: Take advantage of server-side rendering capabilities to improve performance and SEO of your application.
 
 ## Getting Started
 
@@ -69,7 +69,3 @@ Contributions are welcome! If you have suggestions, bug reports, or feature requ
 ## License
 
 This project is open-source and available under the [MIT License](LICENSE).
-
----
-
-Feel free to customize and extend the Laravel Modernize Starter to fit your specific project needs. Happy coding! 🚀
