@@ -1,7 +1,12 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import BaseBreadcrumb from "@/components/shared/BaseBreadcrumb.vue";
-import { UserCircleIcon, BellIcon, ArticleIcon, LockIcon } from "vue-tabler-icons";
+import {
+    UserCircleIcon,
+    BellIcon,
+    ArticleIcon,
+    LockIcon,
+} from "vue-tabler-icons";
 import AccountTab from "./Partials/AccountTab.vue";
 import NotificationTab from "./Partials/NotificationTab.vue";
 import BillsTab from "./Partials/BillsTab.vue";
@@ -25,14 +30,22 @@ const breadcrumbs = ref([
 </script>
 
 <template>
-
     <Head :title="page.title" />
 
-    <BaseBreadcrumb :title="page.title" :breadcrumbs="breadcrumbs"></BaseBreadcrumb>
+    <BaseBreadcrumb
+        :title="page.title"
+        :breadcrumbs="breadcrumbs"
+    ></BaseBreadcrumb>
     <v-row class="justify-center">
         <v-col cols="12" md="12">
             <v-card elevation="10" rounded="md">
-                <v-tabs v-model="tab" bg-color="transparent" min-height="70" height="70" color="primary">
+                <v-tabs
+                    v-model="tab"
+                    bg-color="transparent"
+                    min-height="70"
+                    height="70"
+                    color="primary"
+                >
                     <v-tab value="Account" class="text-medium-emphasis">
                         <UserCircleIcon class="mr-2" size="20" />
                         Account

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\TrashbinController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -12,6 +13,8 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::put('config', [ProfileController::class, 'config'])->name('config.update');
     Route::resource('users', UserController::class);
+    Route::get('/trashbins', [TrashbinController::class, 'coba'])->name('coba');
+    Route::get('/trashbins/trashbins1', [TrashbinController::class, 'coba1'])->name('coba1');
 });
 
 require __DIR__.'/auth.php';
